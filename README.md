@@ -19,7 +19,7 @@ TopicName=glue-jobs-topics
 
 * replace where it says XXXX with your AWS Account ID
 
-##### Step 3: Add ytour Eail Address
+##### Step 3: Add your Email Address
 
 ```
     MySubscription:
