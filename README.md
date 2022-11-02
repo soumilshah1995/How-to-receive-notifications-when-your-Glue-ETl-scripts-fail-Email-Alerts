@@ -61,7 +61,7 @@ npx sls deploy
 
 
 
-### Reference 
+### Special Thanks 
 
 * https://aws.amazon.com/premiumsupport/knowledge-center/glue-job-fail-retry-lambda-sns-alerts/
 * https://aarfahrayees.medium.com/easy-way-for-setting-up-notification-for-aws-glue-jobs-that-failed-using-sns-a002a52a1b72
