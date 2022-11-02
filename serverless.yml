@@ -1,0 +1,45 @@
+service: glue-failed-jobs-alerts
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 200
+  timeout: 500
+
+useDotenv: true
+
+functions:
+  glue-jobs-failed:
+    handler: handler.lambda_handler
+    environment:
+      TopicArn: arn:aws:sns:us-east-1:${env:ACCOUNT}:${env:TopicName}
+    events:
+      - eventBridge:
+          pattern:
+            source:
+              - aws.glue
+            detail-type:
+              - "Glue Job State Change"
+            detail:
+              state:
+                - 'FAILED'
+                - 'STOPPED'
+                - 'Stopped'
+
+
+resources:
+  Resources:
+
+    MySubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: <EMAIL GOES HERE>
+        Protocol: email
+        TopicArn: !Ref 'SNSTopic'
+
+    SNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${env:TopicName}
