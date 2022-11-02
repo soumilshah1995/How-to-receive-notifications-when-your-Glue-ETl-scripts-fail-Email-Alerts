@@ -2,12 +2,13 @@
 
 ![image](https://user-images.githubusercontent.com/39345855/199550250-5fb8e90d-6855-4e89-a038-d51f124f556d.png)
 
-Set up a job alert to notify you each time your job succeeds or fails if you're concerned about the status of your Glue job and are weary of constantly checking the job console for problems or success. Today, we'll put up a mechanism for notifications that will let us know when one of our Glue jobs has failed or halted.
+* Set up a job alert to notify you each time your job succeeds or fails if you're concerned about the status of your Glue job and are weary of constantly checking the job console for problems or success. Today, we'll put up a mechanism for notifications that will let us know when one of our Glue jobs has failed or halted.
 
-####Solution:
+
 
 ---------------------------------------------------------------------
-Whenever the state changes for glue job that event shall be sent to AWS Event Bridge and where we shall have a rule if the event matches with given rule then event shall be passed to Lambda function which will process and send details to SNS Topic where subscribed candidates can be notified via email 
+#### Solution:
+* Whenever the state changes for glue job that event shall be sent to AWS Event Bridge and where we shall have a rule if the event matches with given rule then event shall be passed to Lambda function which will process and send details to SNS Topic where subscribed candidates can be notified via email 
 
 #### Steps to use 
 
