@@ -8,7 +8,12 @@ import logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 # Set up Boto 3 client for SNS
-client = boto3.client('sns')
+client = boto3.client(
+    'sns',
+    aws_access_key_id=os.getenv("DEV_ACCESS_KEY"),
+    aws_secret_access_key=os.getenv("DEV_SECRET_KEY"),
+    region_name=os.getenv("DEV_REGION"),
+                      )
 # Variables for the SNS:
 snsTopicARN = os.getenv("TopicArn")
 
