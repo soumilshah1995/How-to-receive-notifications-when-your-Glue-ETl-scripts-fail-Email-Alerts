@@ -13,8 +13,15 @@ Whenever the state changes for glue job that event shall be sent to AWS Event Br
 
 ##### Step 2: change the Env Values 
 ```
-ACCOUNT=XXXXXX
+ACCOUNT=XXXXX
 TopicName=glue-jobs-topics
+
+
+DEV_ACCESS_KEY=XXXXXXXXX
+DEV_SECRET_KEY=XXX
+DEV_REGION=us-east-1
+
+
 ```
 
 * replace where it says XXXX with your AWS Account ID
