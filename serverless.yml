@@ -15,6 +15,9 @@ functions:
     handler: handler.lambda_handler
     environment:
       TopicArn: arn:aws:sns:us-east-1:${env:ACCOUNT}:${env:TopicName}
+      DEV_ACCESS_KEY: ${env:DEV_ACCESS_KEY}
+      DEV_SECRET_KEY: ${env:DEV_SECRET_KEY}
+      DEV_REGION: ${env:DEV_REGION}
     events:
       - eventBridge:
           pattern:
@@ -35,7 +38,7 @@ resources:
     MySubscription:
       Type: AWS::SNS::Subscription
       Properties:
-        Endpoint: <EMAIL GOES HERE>
+        Endpoint: <ADD YOUR EMAIL >
         Protocol: email
         TopicArn: !Ref 'SNSTopic'
 
